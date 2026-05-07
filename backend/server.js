@@ -139,7 +139,7 @@ app.delete('/api/tasks/:id', authenticate, async (req, res) => {
   res.json({ success: true });
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 seedDatabase().then(() => {
   app.listen(PORT, () => console.log(`Backend API running on http://localhost:${PORT}`));
 });
